@@ -9,3 +9,15 @@ Login and go to Quotation & Pricing page
 
 [teardown]
   close browser
+
+*** Keywords ***
+
+Log new,pending,accepted quotations number
+    sleep  3
+    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem new']
+    log  ${COUNT} new quotations
+    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem pending']
+    log  ${COUNT} pending quotations
+    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem accepted']
+    log  ${COUNT} accepted quotations
+    capture page screenshot
