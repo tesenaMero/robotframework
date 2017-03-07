@@ -25,12 +25,3 @@ Click Quotation & Pricing
     wait until page contains  Quotation and Pricing
     click link  Quotation and Pricing
 
-Log new,pending,accepted quotations number
-    sleep  3
-    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem new']
-    log  ${COUNT} new quotations
-    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem pending']
-    log  ${COUNT} pending quotations
-    ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem accepted']
-    log  ${COUNT} accepted quotations
-    capture page screenshot
