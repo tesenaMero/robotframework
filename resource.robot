@@ -16,8 +16,9 @@ ${COUNT}
 
 *** Keywords ***
 Go to template test page
-    open browser  ${SERVER}  ${BROWSER}
-    title should be  Cemex Products
+    open browser  ${LOGIN URL}   ${BROWSER}
+    wait until keyword succeeds  1 min  3 sec  title should be  Cemex Products
+
 
 Click Quotation & Pricing
     wait until page contains  Quotation and Pricing
