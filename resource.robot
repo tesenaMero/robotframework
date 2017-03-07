@@ -17,6 +17,7 @@ ${COUNT}
 *** Keywords ***
 Go to template test page
     open browser  ${LOGIN URL}   ${BROWSER}
+    maximize browser window
     wait until keyword succeeds  1 min  3 sec  title should be  Cemex Products
 
 
@@ -32,3 +33,4 @@ Log new,pending,accepted quotations number
     log  ${COUNT} pending quotations
     ${COUNT} =  Get Matching Xpath Count  //div[@data-test='QuotationItem accepted']
     log  ${COUNT} accepted quotations
+    capture page screenshot
