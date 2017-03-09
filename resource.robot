@@ -5,8 +5,8 @@ Library           Selenium2Library
 ${USER}           readymix
 ${PASSWORD}       qNm3opIGZcG5E07rRqhb2JSXk6fBI8
 ${SERVER}         ${USER}:${PASSWORD}@react-template-test.mybluemix.net
-${BROWSER}        chrome
-${BROWSER_VERSION}  56
+${BROWSER}
+${BROWSER_VERSION}
 ${DELAY}          0
 ${LOGIN URL}      http://${SERVER}/
 ${STACKUSER}      janpippal1
@@ -16,7 +16,7 @@ ${COUNT}
 
 *** Keywords ***
 Go to template test page
-    open browser  ${LOGIN URL}   ${BROWSER}
+    open browser  url=${LOGIN URL}  remote_url=${BROWSERSTACK}  desired_capabilities=browser:${BROWSER},browser_version:${BROWSER_VERSION},os:Windows,os_version:10
     maximize browser window
     wait until keyword succeeds  1 min  3 sec  title should be  Cemex Products
 

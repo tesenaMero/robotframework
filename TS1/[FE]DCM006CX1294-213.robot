@@ -5,18 +5,17 @@ Documentation     This TC is verifying story DCM006CX1294-213
 ...                 2. If you click in the dropdown will appear quotes, pricing
 ...                 3. If you click quotes will go to quotes screen
 ...                 4. If you click pricing will go to pricing screen and in the bar just left of pricing will appear an icon of a calendar
-Resource  ../resource.robot
-Suite Setup  Run Keywords    Go to template test page
+Resource            ../resource.robot
+Suite Setup  Run Keywords   Go to template test page
 ...                         Click Quotation & Pricing
 
 *** Variables ***
 
 
 *** Test Cases ***
-Check dropdown visibility
+Check dropdown visibility in the main screen
     wait until element is visible  //div[span[text()="Quotation"]]
     wait until page contains element  //div[span[text()="Quotation"]]
-
 
 Check dropdown and assert its content
     click element   //div[span[text()="Quotation"]]
