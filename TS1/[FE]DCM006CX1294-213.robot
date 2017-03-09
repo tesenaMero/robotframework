@@ -8,6 +8,7 @@ Documentation     This TC is verifying story DCM006CX1294-213
 Resource            ../resource.robot
 Suite Setup  Run Keywords   Go to template test page
 ...                         Click Quotation & Pricing
+Suite Teardown  Run Keywords  Close browser
 
 *** Variables ***
 
