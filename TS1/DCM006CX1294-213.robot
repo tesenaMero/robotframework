@@ -16,18 +16,22 @@ Suite Teardown  Run Keywords  Close browser
 *** Test Cases ***
 Check dropdown visibility in the main screen
     [Tags]  low
+    wait until page contains element  //div[text()="Quotation and pricing"]
     wait until element is visible  //div[span[text()="Quotation"]]
     wait until page contains element  //div[span[text()="Quotation"]]
 
 Check dropdown and assert its content
     [Tags]  low
+    wait until page contains element  //div[text()="Quotation and pricing"]
     click element   //div[span[text()="Quotation"]]
     wait until page contains element  //div[span[text()="Quotation"]]/div/a/div[text()="Quotations"]
     wait until page contains element  //div[span[text()="Quotation"]]/div/a/div[text()="Pricing"]
     click element   //div[span[text()="Quotation"]]
+    capture page screenshot
 
 Check dropdown navigation
     [Tags]  normal
+    wait until page contains element  //div[text()="Quotation and pricing"]
     click element   //div[span[text()="Quotation"]]
     wait until page contains element  //div[span[text()="Quotation"]]/div/a/div[text()="Quotations"]
     click element  //div[span[text()="Quotation"]]/div/a/div[text()="Quotations"]

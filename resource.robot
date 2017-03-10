@@ -1,5 +1,7 @@
 *** Settings ***
 Library           Selenium2Library
+Library           BuiltIn
+Library           String
 
 *** Variables ***
 ${USER}           readymix
@@ -12,10 +14,10 @@ ${LOGIN URL}      http://${SERVER}/
 ${STACKUSER}      janpippal1
 ${ACCESSKEY}      sYGVo4XEixNpfukncpWm
 ${BROWSERSTACK}  http://${STACKUSER}:${ACCESSKEY}@hub.browserstack.com:80/wd/hub
-${COUNT}
 
 *** Keywords ***
 Go to template test page
+    #open browser  ${LOGIN URL}  chrome
     open browser  url=${LOGIN URL}  remote_url=${BROWSERSTACK}  desired_capabilities=browser:${BROWSER},browser_version:${BROWSER_VERSION},os:Windows,os_version:10
     maximize browser window
     wait until keyword succeeds  1 min  3 sec  title should be  Cemex Products
